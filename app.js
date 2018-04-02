@@ -48,26 +48,26 @@ $.ajax({
     console.log(sortedEmotions.reverse());
 
     var messages = [{
-        header: "header statement about fear",
-        message: "some message about fear"
+        header: "You looked afraid!", 
+        message: "I don't know whats making you so scared but maybe a delicious Whiskey drink will hep calm you down!"
      }, {
-        header: "some header statement about sadness",
-        message: "some message about sadness"
+        header: "You looked Sad!",
+        message: "It's time to perk up! Try some refreshing Gin based cocktails to help forget about your problems!"
      }, {
-        header: " some header statement about neutral",
-        message: " some message about neutral"
+        header: "You looked Neutral!",
+        message: "I don't know what makes you so aloof, but its creeping me out! Try any of these delicious cocktails to put some emotion in ya!"
      }, {
-        header: " some header statement about disgust",
-        message: " some message about disgust"
+        header: "You looked disgusted!",
+        message: "Whatever you looked were looking at thoroughly disgusted you. Hopefully this scotch based cocktail will wash that disgust out!"
      }, {
-        header: " some header statement about anger",
-        message: " some message about anger"
+        header: "You looked Angry!",
+        message: "You need to calm the heck down! Cool off with a one of these amazing Rum based tropical cocktails!"
      }, {
-        header: "some header statement message about happiness",
-        message: "some message about happiness"
+        header: "You looked Happy!",
+        message: "Someone looks pretty happy today! Keep that happiness going with one of these Vodka based cocktails!"
      }, {
-        header: "some header statement message about surprise",
-        message: "some message about surprise"
+        header: "You looked Surprised!",
+        message: "sWhoa! I don't know what surprised you so much but heres some Champagne based cocktails to help wash it down!"
      
      }];
      
