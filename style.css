@@ -1,0 +1,39 @@
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(7, 67, 231, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+.modalDialog > div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: rgb(241, 245, 5);
+    background: -moz-linear-gradient(rgb(245, 241, 5), rgb(228, 69, 69));
+    background: -webkit-linear-gradient(rgb(245, 241, 5), rgb(228, 69, 69));
+    background: -o-linear-gradient(rgb(245, 241, 5), rgb(228, 69, 69));
+}
+main {
+    height: 100%
+}
+main, container {
+    padding-left: 300px;
+
+}
