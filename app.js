@@ -7,8 +7,6 @@ $(document).ready(function () {
       });
 
 // click handler for submitting image
-// $( "#submit" ).on( "click", function(){
-//     
 
 
 // moving image file to some form that can pass into query
