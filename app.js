@@ -1,10 +1,22 @@
-// $(document).ready(function () {
+// Load modal on page load.
+$(window).on('load', function () {    
+    $('#modal1').modal({
+        dismissible: false
+    });  
+    $('#modal1').modal('open');  
 
-//     // Load modal on page load.
-//     $(window).load(function(){
-//         //Disply the modal popup
-//           $('#openModal').modal('show');
-//       });
+    $("#yes").on("click", function() {
+        $('#modal1').modal('close');
+    });
+    //Redirect if under 21 years of age
+    $("#no").on("click", function() {
+        window.location.assign("https://www.responsibility.org/")
+    });
+}); 
+
+
+
+
 var messages = [{
     header: "You looked afraid!",
     message: "I don't know whats making you so scared but maybe a delicious Whiskey drink will hep calm you down!"

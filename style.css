@@ -1,39 +1,55 @@
-.modalDialog {
+.modal-overlay {
     position: fixed;
-    font-family: Arial, Helvetica, sans-serif;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    z-index: 999;
+    top: -25%;
     left: 0;
-    background: rgba(7, 67, 231, 0.8);
-    z-index: 99999;
-    opacity:0;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
-    pointer-events: none;
+    bottom: 0;
+    right: 0;
+    height: 125%;
+    width: 100%;
+    background: white;
+    display: none;
+    will-change: opacity;
 }
 
-.modalDialog:target {
-    opacity:1;
-    pointer-events: auto;
+.modal {
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    font-weight: 300px;
+    text-align: center;
+    padding: 20px;
+    background-image: url("images/Background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 620px !important;
 }
 
-.modalDialog > div {
-    width: 400px;
-    position: relative;
-    margin: 10% auto;
-    padding: 5px 20px 13px 20px;
-    border-radius: 10px;
-    background: rgb(241, 245, 5);
-    background: -moz-linear-gradient(rgb(245, 241, 5), rgb(228, 69, 69));
-    background: -webkit-linear-gradient(rgb(245, 241, 5), rgb(228, 69, 69));
-    background: -o-linear-gradient(rgb(245, 241, 5), rgb(228, 69, 69));
+.btn-block {
+    display: table-caption;
+    width: 15%;
 }
+
+.btn-block+.btn-block {
+    margin-top: 0px;
+}
+
+.btn-success {
+    color: white;
+    background-color: #1b0eda;
+    border-color: #050505;
+    font-size: 30px;
+}
+
 main {
     height: 100%
 }
+
 main, container {
     padding-left: 300px;
-
 }
