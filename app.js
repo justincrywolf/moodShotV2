@@ -82,7 +82,7 @@ $("#link-submit").on("click", function (event) {
             $("#messages-header").text(messages[1].header);
             $("#messages-content").text(messages[1].message);
         } else if (sortedEmotions[0][0] === "neutral") {
-            var queryAlc = "Random.php";
+            var queryAlc = "Midori";
             $("#messages-header").text(messages[2].header);
             $("#messages-content").text(messages[2].message);
         } else if (sortedEmotions[0][0] === "disgust") {
