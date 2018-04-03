@@ -5,6 +5,29 @@
 //         //Disply the modal popup
 //           $('#openModal').modal('show');
 //       });
+var messages = [{
+    header: "You looked afraid!",
+    message: "I don't know whats making you so scared but maybe a delicious Whiskey drink will hep calm you down!"
+}, {
+    header: "You looked Sad!",
+    message: "It's time to perk up! Try some refreshing Gin based cocktails to help forget about your problems!"
+}, {
+    header: "You looked Neutral!",
+    message: "I don't know what makes you so aloof, but its creeping me out! Try any of these delicious cocktails to put some emotion in ya"
+}, {
+    header: "You looked disgusted!",
+    message: "Whatever you looked were looking at thoroughly disgusted you. Hopefully this scotch based cocktail will wash that disgust out!"
+}, {
+    header: "You looked Angry!",
+    message: "You need to calm the heck down! Cool off with a one of these amazing Rum based tropical cocktails!"
+}, {
+    header: "You looked Happy!",
+    message: "Someone looks pretty happy today! Keep that happiness going with one of these Vodka based cocktails!"
+}, {
+    header: "You looked Surprised!",
+    message: "Whoa! I don't know what surprised you so much but heres some Champagne based cocktails to help wash it down!"
+
+}];
 
 // click handler for submitting image
 $("#link-submit").on("click", function (event) {
@@ -48,59 +71,34 @@ $("#link-submit").on("click", function (event) {
         var sortedEmotions = sortProperties(emotions);
         console.log(sortedEmotions.reverse());
 
-        var messages = [{
-            header: "header statement about fear",
-            message: "some message about fear"
-        }, {
-            header: "some header statement about sadness",
-            message: "some message about sadness"
-        }, {
-            header: " some header statement about neutral",
-            message: " some message about neutral"
-        }, {
-            header: " some header statement about disgust",
-            message: " some message about disgust"
-        }, {
-            header: " some header statement about anger",
-            message: " some message about anger"
-        }, {
-            header: "some header statement message about happiness",
-            message: "some message about happiness"
-        }, {
-            header: "some header statement message about surprise",
-            message: "some message about surprise"
-
-        }];
-
-
         if (sortedEmotions[0][0] === "fear") {
             var queryAlc = "Whiskey";
-            $("#messages-header").text(messages[0].header);
-            $("#messages-content").text(messages[0].message);
+            $("#comment-header").text(messages[0].header);
+            $("#comment-text").text(messages[0].message);
         } else if (sortedEmotions[0][0] === "sadness") {
             var queryAlc = "Gin";
-            $("#messages-header").text(messages[1].header);
-            $("#messages-content").text(messages[1].message);
+            $("#comment-header").text(messages[1].header);
+            $("#comment-text").text(messages[1].message);
         } else if (sortedEmotions[0][0] === "neutral") {
             var queryAlc = "Random.php";
-            $("#messages-header").text(messages[2].header);
-            $("#messages-content").text(messages[2].message);
+            $("#comment-header").text(messages[2].header);
+            $("#comment-text").text(messages[2].message);
         } else if (sortedEmotions[0][0] === "disgust") {
             var queryAlc = "Scotch";
-            $("#messages-header").text(messages[3].header);
-            $("#messages-content").text(messages[3].message);
+            $("#comment-header").text(messages[3].header);
+            $("#comment-text").text(messages[3].message);
         } else if (sortedEmotions[0][0] === "anger") {
             var queryAlc = "Rum";
-            $("#messages-header").text(messages[4].header);
-            $("#messages-content").text(messages[4].message);
+            $("#comment-header").text(messages[4].header);
+            $("#comment-text").text(messages[4].message);
         } else if (sortedEmotions[0][0] === "happiness") {
             var queryAlc = "Vodka";
-            $("#messages-header").text(messages[5].header);
-            $("#messages-content").text(messages[5].message);
+            $("#comment-header").text(messages[5].header);
+            $("#comment-text").text(messages[5].message);
         } else if (sortedEmotions[0][0] === "surprise") {
             var queryAlc = "Champagne";
-            $("#messages-header").text(messages[6].header);
-            $("#messages-content").text(messages[6].message);
+            $("#comment-header").text(messages[6].header);
+            $("#comment-text").text(messages[6].message);
         }
 
         // cocktailDB ajax request
@@ -108,7 +106,7 @@ $("#link-submit").on("click", function (event) {
         var randomDrinkIndex;
         var queryRandomDrink;
         var queryIngredient;
-        var drinkElement = $(".drink");
+        var drinkElement = $("#recipe");
         var imgElement = $("#drink-image")
 
 
@@ -134,18 +132,22 @@ $("#link-submit").on("click", function (event) {
                     console.log("next call", response);
                     var drinkInstructions = response.drinks[0].strInstructions;
                     var drinkName = response.drinks[0].strDrink;
+                    var drinkGlass = response.drinks[0].strGlass;
                     console.log(drinkName);
                     var drink = response.drinks[0];
+                    console.log(drink);
                     var i = 1;
+                    drinkElement.empty();
                     while (drink["strIngredient" + i]) {
-                        drinkElement.append("<div>" + drink["strMeasure" + i] + " - " + drink["strIngredient" + i] + "</div>");
+                        drinkElement.append("<div>" + drink["strMeasure" + i] + " - " + drink["strIngredient" + i] + "</div><br>");
                         i++;
 
 
 
                     };
+                    $("#glass").empty().append(drinkGlass);
                     $("#drink-name").empty().append(drinkName);
-                    $("#drink-instructions").empty().append(drinkInstructions);
+                    $("#instructions").append(drinkInstructions);
                     imgElement.attr("src", drink.strDrinkThumb);
 
 
