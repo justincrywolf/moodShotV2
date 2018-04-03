@@ -7,18 +7,20 @@ $(document).ready(function () {
       });
 
 // click handler for submitting image
+$( "#link-submit" ).on( "click", function( event ){
+    event.preventDefault();
+    var faceURL = $( "#link-url" ).val().trim();
+    console.log( faceURL );
 
 
 // moving image file to some form that can pass into query
 
 
-// global variables for face++
-
 //////////////////////////// var faceImage = user uploaded image
-var faceImage = "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/13625394_10154011762247869_1447612658950188866_n.jpg?_nc_cat=0%26oh=9af591b71b9810b065670cc7da47f56a%26oe=5B6BA40E";
+// var faceImage = "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/13625394_10154011762247869_1447612658950188866_n.jpg?_nc_cat=0%26oh=9af591b71b9810b065670cc7da47f56a%26oe=5B6BA40E";
 
 
-var faceQuery = "https://cors-anywhere.herokuapp.com/https://api-us.faceplusplus.com/facepp/v3/detect?api_key=s0vdP0fNEcYFymfT0sw0pt-pGCOp37-y&api_secret=7Ri6sHu3XL0WdXmylro7Rvz_v8JJKV_M&image_url=" + faceImage + "&return_attributes=emotion";
+var faceQuery = "https://cors-anywhere.herokuapp.com/https://api-us.faceplusplus.com/facepp/v3/detect?api_key=s0vdP0fNEcYFymfT0sw0pt-pGCOp37-y&api_secret=7Ri6sHu3XL0WdXmylro7Rvz_v8JJKV_M&image_url=" + faceURL + "&return_attributes=emotion";
 
 // face++ ajax request
 var emotions;
@@ -164,6 +166,6 @@ $.ajax({
 
 
 
-
+})
 
 });
