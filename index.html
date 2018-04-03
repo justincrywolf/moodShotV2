@@ -10,22 +10,26 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <!-- Linking Google Fonts (for icons and the css they use.) -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">    
     <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 
 <body class="grey lighten-4">
+    <!-- Box asking for name and age input -->
     <!-- Modal page to open on load -->
-    <!-- Box requiring age to login -->
-    <div id="openModal" class="modalDialog">
-        <div class="form-group">
-            <h2>Age Required to Login</h2>
-            <label for="usrname">Date of Birth</label>
-            <input type="text" class="form-control" id="dateOfBirth" placeholder=" mm/dd/yyyy">
-            <button type="submit" class="btn btn-default btn-success btn-block">Submit</button>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-body">
+            <div class="form-group">
+                <h1>Welcome To MoodShot!</h1>
+                <h3>A great way to improve your mood!<h3>
+                <h2>Are you 21 years old or older?</h2>
+                <button type="button" id="yes" class="btn btn-default btn-success btn-block">Yes</button>
+                <button type="button" id="no" class="btn btn-default btn-success btn-block">No</button>
+            </div>
         </div>
     </div>
+
 
     <!-- sidebar stuff goes here -->
 
@@ -129,6 +133,7 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="app.js"></script>
 </body>
 
