@@ -145,7 +145,7 @@ $("#link-submit").on("click", function (event) {
 
                     };
                     $("#drink-name").empty().append(drinkName);
-                    $("#drink-instructions").empty().append(drinkInstructions);
+                    $("#recipe").empty().append(drinkInstructions);
                     imgElement.attr("src", drink.strDrinkThumb);
 
 
