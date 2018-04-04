@@ -4,7 +4,7 @@ $(window).on('load', function () {
         dismissible: false
     });  
     $('#modal1').modal('open');  
-
+    // Once clicked lets you enter the site
     $("#yes").on("click", function() {
         $('#modal1').modal('close');
     });
