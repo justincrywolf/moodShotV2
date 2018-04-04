@@ -159,7 +159,7 @@ $("#link-submit").on("click", function (event) {
                     };
                     $("#glass").empty().append(drinkGlass);
                     $("#drink-name").empty().append(drinkName);
-                    $("#instructions").append(drinkInstructions);
+                    $("#instructions").empty().append(drinkInstructions);
                     imgElement.attr("src", drink.strDrinkThumb);
 
 
